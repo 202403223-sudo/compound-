@@ -1,0 +1,409 @@
+
+/* =========================================
+   MAISON VERDE
+   PREMIUM EFFECTS & ANIMATIONS
+   ========================================= */
+
+#root {
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  border: 0;
+}
+
+/* -----------------------------------------
+   PAGE TRANSITIONS
+----------------------------------------- */
+
+.page-enter {
+  animation: pageEnter 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes pageEnter {
+  0% {
+    opacity: 0;
+    transform: perspective(1200px) rotateY(-8deg) translateX(-18px);
+    transform-origin: left center;
+  }
+
+  100% {
+    opacity: 1;
+    transform: perspective(1200px) rotateY(0deg) translateX(0);
+  }
+}
+
+.book-page {
+  animation: bookOpen 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: left center;
+}
+
+@keyframes bookOpen {
+  0% {
+    opacity: 0;
+    transform: perspective(1600px) rotateY(-32deg) scale(0.98);
+  }
+
+  100% {
+    opacity: 1;
+    transform: perspective(1600px) rotateY(0deg) scale(1);
+  }
+}
+
+/* -----------------------------------------
+   HERO
+----------------------------------------- */
+
+.hero-image {
+  animation: heroZoom 12s ease-out forwards;
+  transform: scale(1.08);
+}
+
+@keyframes heroZoom {
+  0% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hero-title {
+  animation: heroTitle 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+@keyframes heroTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(45px);
+    letter-spacing: -0.04em;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: normal;
+  }
+}
+
+.hero-reveal {
+  animation: revealUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-reveal-delay {
+  animation: revealUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
+}
+
+.hero-buttons {
+  animation: revealUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.65s both;
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -----------------------------------------
+   FLOATING HERO ORBS
+----------------------------------------- */
+
+.hero-orb {
+  animation: floatOrb 8s ease-in-out infinite;
+}
+
+.hero-orb-delay {
+  animation: floatOrb 7s ease-in-out 1s infinite reverse;
+}
+
+@keyframes floatOrb {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-25px) rotate(8deg);
+  }
+}
+
+/* -----------------------------------------
+   SCROLL INDICATOR
+----------------------------------------- */
+
+.scroll-line {
+  animation: scrollDown 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(27px);
+    opacity: 0;
+  }
+}
+
+/* -----------------------------------------
+   LUXURY CARDS
+----------------------------------------- */
+
+.luxury-card {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid #e8dfd3;
+  box-shadow: 0 15px 45px rgba(77, 61, 45, 0.07);
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease,
+    border-color 0.3s ease;
+}
+
+.luxury-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 25px 65px rgba(77, 61, 45, 0.13);
+  border-color: #d8cbbb;
+}
+
+/* -----------------------------------------
+   HOME PROPERTY CARDS
+----------------------------------------- */
+
+.property-home-card {
+  box-shadow: 0 15px 45px rgba(77, 61, 45, 0.08);
+
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s ease;
+}
+
+.property-home-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 70px rgba(77, 61, 45, 0.15);
+}
+
+/* -----------------------------------------
+   LIFESTYLE CARDS
+----------------------------------------- */
+
+.lifestyle-card {
+  box-shadow: 0 10px 35px rgba(77, 61, 45, 0.04);
+
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease,
+    border-color 0.3s ease;
+}
+
+.lifestyle-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 55px rgba(77, 61, 45, 0.1);
+  border-color: #d7c8b6;
+}
+
+/* -----------------------------------------
+   BUTTONS
+----------------------------------------- */
+
+.primary-btn {
+  background: #6d5945;
+  color: #ffffff;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: #514131;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(81, 65, 49, 0.2);
+}
+
+.primary-btn:active {
+  transform: translateY(0);
+}
+
+.secondary-btn {
+  background: #eee7dc;
+  color: #594936;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background: #dfd3c3;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(77, 61, 45, 0.08);
+}
+
+.secondary-btn:active {
+  transform: translateY(0);
+}
+
+/* -----------------------------------------
+   TYPOGRAPHY
+----------------------------------------- */
+
+.serif {
+  font-family: "DM Serif Display", serif;
+}
+
+.coffee-line {
+  width: 70px;
+  height: 2px;
+  background: #b69b79;
+}
+
+/* -----------------------------------------
+   FORM ELEMENTS
+----------------------------------------- */
+
+input,
+textarea,
+select {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #9c805f;
+  box-shadow: 0 0 0 4px rgba(156, 128, 95, 0.09);
+  outline: none;
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+  border-color: #c7b8a6;
+}
+
+/* -----------------------------------------
+   SCROLLBAR
+----------------------------------------- */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eee8dd;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b89b78;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #927657;
+}
+
+/* -----------------------------------------
+   TEXT SELECTION
+----------------------------------------- */
+
+::selection {
+  background: #cdb493;
+  color: #302a25;
+}
+
+/* -----------------------------------------
+   FOCUS
+----------------------------------------- */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #8f7558;
+  outline-offset: 3px;
+}
+
+/* -----------------------------------------
+   SMOOTH IMAGE EFFECT
+----------------------------------------- */
+
+img {
+  image-rendering: auto;
+}
+
+/* -----------------------------------------
+   RESPONSIVE
+----------------------------------------- */
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: clamp(4rem, 10vw, 6rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .page-enter {
+    animation-duration: 0.5s;
+  }
+
+  .book-page {
+    animation-duration: 0.5s;
+  }
+
+  .hero-image {
+    animation-duration: 8s;
+  }
+
+  .property-home-card:hover,
+  .lifestyle-card:hover,
+  .luxury-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* -----------------------------------------
+   REDUCE MOTION
+----------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
